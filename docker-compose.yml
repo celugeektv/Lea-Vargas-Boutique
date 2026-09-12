@@ -6,7 +6,7 @@ services:
     container_name: tienda-ropa-app
     restart: always
     ports:
-      - "3000:3000"
+      - "4000:3000"
     environment:
       - NODE_ENV=production
       - DATABASE_URL=file:/app/prisma/dev.db

@@ -1,0 +1,567 @@
+/* admin.module.css - Diseño Fresh & Modern Dashboard */
+
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Slate 50 ultra suave */
+  font-family: var(--font-sans);
+}
+
+/* SIDEBAR: Fresco, cristalino y elegante */
+.sidebar {
+  width: 280px;
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.brandTop {
+  display: flex;
+  align-items: baseline;
+}
+
+.brandSignature {
+  font-family: var(--font-signature);
+  font-size: 2.25rem; /* Un poco más pequeño que en la web pública para el sidebar */
+  font-weight: 400;
+  line-height: 1;
+}
+
+.brandBoutique {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  margin-top: -0.2rem;
+  margin-right: -0.5em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem;
+  color: #64748b; /* Slate 500 */
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.navItem svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.navItem:hover {
+  background-color: #f1f5f9; /* Slate 100 */
+  color: #0f172a;
+  transform: translateX(4px);
+}
+
+.navItem:hover svg {
+  color: #0f172a;
+}
+
+.navItemActive {
+  background-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+}
+
+.navItemActive svg {
+  color: #ffffff;
+}
+
+.navItemActive:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+  transform: none;
+}
+
+/* CONTENIDO PRINCIPAL */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* HEADER: Flotante y limpio */
+.header {
+  height: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50px;
+  transition: all 0.2s;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  padding-left: 1.25rem;
+}
+
+.userInfo:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669); /* Esmeralda fresco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* ÁREA DE TRABAJO */
+.pageContent {
+  padding: 0 3rem 3rem 3rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.pageTitle {
+  font-family: var(--font-brand);
+  font-size: 2.25rem !important;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+/* WIDGETS Y TARJETAS (Modern Fresh) */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.widget {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.widget:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.widgetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.widgetTitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.widgetIcon {
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+.widget:hover .widgetIcon {
+  color: #0f172a;
+}
+
+.widgetValue {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-sans);
+}
+
+.trendIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+}
+
+.trendPositive {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+.trendNegative {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* TABLA PREMIUM FRESH */
+.card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.cardHeader {
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th {
+  text-align: left;
+  padding: 1.25rem 2.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  font-weight: 700;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table td {
+  padding: 1.5rem 2.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  color: #334155;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.table tr {
+  transition: all 0.2s ease;
+}
+.table tr:hover td {
+  background-color: #f8fafc;
+}
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.badge-pending {
+  background-color: #fffbeb;
+  color: #b45309;
+}
+.badge-paid {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+/* -------------------------------------------------------------
+ * PREMIUM FINTECH STYLES (Módulo Contable)
+ * ------------------------------------------------------------- */
+.fintechGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.fintechCard {
+  background: linear-gradient(145deg, #ffffff, #fdfdfd);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04), 
+              0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fintechCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 
+              0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.fintechCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.cardIncome::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.cardExpense::before {
+  background: linear-gradient(90deg, #f43f5e, #fb7185);
+}
+
+.cardProfit::before {
+  background: linear-gradient(90deg, #09090b, #3f3f46);
+}
+
+.fintechHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fintechIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incomeIcon {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.expenseIcon {
+  background: rgba(244, 63, 94, 0.1);
+  color: #f43f5e;
+}
+
+.profitIcon {
+  background: rgba(9, 9, 11, 0.05);
+  color: #09090b;
+}
+
+.fintechTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #71717a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fintechAmount {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #09090b;
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+}
+
+.fintechForm {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  margin-bottom: 2.5rem;
+}
+
+.fintechFormHeader {
+  margin-bottom: 2rem;
+}
+
+.fintechFormTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #09090b;
+  margin-bottom: 0.5rem;
+}
+
+.fintechFormDesc {
+  color: #71717a;
+  font-size: 0.9rem;
+}
+
+.fintechInputGroup {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+  .fintechInputGroup {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modernInput {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #f4f4f5;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #09090b;
+  transition: all 0.2s;
+  background-color: #fafafa;
+}
+
+.modernInput:focus {
+  outline: none;
+  border-color: #09090b;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(9, 9, 11, 0.05);
+}
+
+.modernLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #52525b;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fintechBtn {
+  background: #09090b;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.fintechBtn:hover {
+  background: #27272a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fintechBtn:active {
+  transform: translateY(0);
+}
+
+/* ESTILOS DE IMPRESIÓN (PDF REPORT) */
+@media print {
+  :global(.no-print) {
+    display: none !important;
+  }
+  .sidebar, .header {
+    display: none !important;
+  }
+  .mainContent, .adminLayout {
+    display: block !important;
+    background-color: white !important;
+    width: 100% !important;
+  }
+  .pageContent {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .dashboardGrid, .fintechGrid {
+    page-break-inside: avoid;
+  }
+  .fintechCard, .card {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  body {
+    background-color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+}
+

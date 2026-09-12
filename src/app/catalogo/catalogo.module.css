@@ -1,0 +1,161 @@
+.catalogContainer {
+  display: flex;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.filters {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.filterSection {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2rem;
+}
+
+.filterTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: var(--color-black);
+}
+
+.filterList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.filterOption:hover {
+  color: var(--color-black);
+}
+
+.colorGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.colorSwatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.colorSwatch:hover {
+  transform: scale(1.1);
+}
+
+.productsArea {
+  flex: 1;
+}
+
+.activeFilters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+
+/* Reutilizando tarjeta de producto de la home */
+.productCard {
+  group: hover;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background-color: #f4f4f5;
+  margin-bottom: 1rem;
+}
+
+.imageWrapper img {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.productCard:hover .imageWrapper img {
+  transform: scale(1.05);
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brand {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-tertiary);
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-black);
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.price {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .catalogContainer {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .filters {
+    width: 100%;
+    /* En un rediseño más avanzado, esto podría estar oculto y mostrarse con un botón "Filtros" */
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: 1fr; /* Una columna en pantallas muy estrechas */
+  }
+}

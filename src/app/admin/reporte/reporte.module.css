@@ -1,0 +1,183 @@
+/* Reporte Mensual PDF Styles */
+
+.documentPage {
+  background-color: white;
+  color: black;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 2rem auto;
+  padding: 2cm;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.printActions {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.printBtn {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #000;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  font-size: 24pt;
+  font-weight: bold;
+  letter-spacing: -0.05em;
+  margin: 0;
+  line-height: 1;
+}
+
+.brandSub {
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #555;
+  margin-top: 0.2rem;
+}
+
+.companyInfo {
+  font-size: 9pt;
+  color: #555;
+  text-align: right;
+}
+
+.reportTitle {
+  font-size: 16pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.reportPeriod {
+  font-size: 12pt;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.summaryGrid {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000;
+  margin-bottom: 2rem;
+}
+
+.summaryBox {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+
+.summaryBox:last-child {
+  border-right: none;
+}
+
+.summaryBox.profit {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.summaryLabel {
+  font-size: 9pt;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.summaryValue {
+  font-size: 16pt;
+  font-weight: bold;
+  color: #000;
+}
+
+.sectionTitle {
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  page-break-after: avoid;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 9.5pt;
+}
+
+.table th {
+  text-align: left;
+  border-bottom: 2px solid #000;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.table td {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem;
+}
+
+.table tr:last-child td {
+  border-bottom: 1px solid #000;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.positive {
+  color: #059669;
+}
+
+.negative {
+  color: #dc2626;
+}
+
+@media print {
+  body {
+    background-color: white !important;
+  }
+  .printActions {
+    display: none !important;
+  }
+  .documentPage {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+  .sectionTitle, .table {
+    page-break-inside: avoid;
+  }
+}

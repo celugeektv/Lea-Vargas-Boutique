@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  tienda-ropa:
+    build: .
+    container_name: tienda-ropa-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:/app/prisma/dev.db
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-1234}
+    volumes:
+      # Persistencia de base de datos
+      - sqlite_data:/app/prisma
+      # Persistencia de imágenes de productos
+      - uploads_data:/app/public/uploads
+
+volumes:
+  sqlite_data:
+  uploads_data:

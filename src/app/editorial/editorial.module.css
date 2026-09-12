@@ -1,0 +1,108 @@
+.editorialContainer {
+  width: 100%;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.textSection {
+  max-width: 800px;
+  margin: 8rem auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.textSection p {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 1.6;
+  color: var(--color-black);
+  font-style: italic;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto 8rem auto;
+}
+
+.gridImage {
+  position: relative;
+  aspect-ratio: 3/4;
+  background-color: #f4f4f5;
+  overflow: hidden;
+}
+
+.gridImage img {
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.gridImage:hover img {
+  transform: scale(1.05);
+}
+
+.fullWidthImage {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  margin-bottom: 8rem;
+  background-color: #f4f4f5;
+}
+
+.fullWidthImage img {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+  .textSection p {
+    font-size: 1.5rem;
+  }
+}
